@@ -1,3 +1,5 @@
+import logging
+
 from flask import Blueprint, render_template, redirect, url_for, flash, session, request
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -22,6 +24,7 @@ def signup():
         existing_user = cur.fetchone()
         if existing_user:
             flash("Username or email already exists.", "warning")
+            logging.warning("Username or email already exists.")
         else:
             cur.execute(
                 "INSERT INTO users (username, email, password_hash) VALUES (%s, %s, %s)",
@@ -29,6 +32,7 @@ def signup():
             )
             conn.commit()
             flash("Signup successful! You can now log in.", "success")
+            logging.info(f"Signup successful for user: {username} with email: {email}")
             return redirect(url_for('auth.login'))
         cur.close()
         conn.close()
@@ -51,9 +55,11 @@ def login():
             session['user_id'] = user[0]
             session['username'] = user[1]
             flash("Login successful!", "success")
+            logging.info(f"Login successful for user: {user[1]}")
             return redirect(url_for('auth.dashboard'))
         else:
             flash("Invalid username or password", "danger")
+            logging.error(f"Invalid username or password {user[1]}")
     return render_template('login.html', form=form)
 
 
@@ -61,6 +67,7 @@ def login():
 def logout():
     session.clear()
     flash("You have been logged out.", "info")
+    logging.info("You have been logged out.")
     return redirect(url_for('auth.login'))
 
 
@@ -80,6 +87,7 @@ def dashboard():
             (user_id, title, description)
         )
         conn.commit()
+        logging.info(f"Task created with title: {title} and description: {description} by user: {user_id}")
         send_task_event('created', {
             'user_id': user_id,
             'title': title,
@@ -112,11 +120,13 @@ def delete_task(task_id):
         return redirect(url_for('auth.login'))
     conn = get_db_connection()
     cursor = conn.cursor()
-    cursor.execute("DELETE FROM tasks WHERE id = %s AND user_id = %s", (task_id, session['user_id']))
+    user_id = session['user_id']
+    cursor.execute("DELETE FROM tasks WHERE id = %s AND user_id = %s", (task_id, user_id))
     conn.commit()
+    logging.info(f"Task: {task_id} deleted by user: {user_id}")
     send_task_event('deleted', {
         'task_id': task_id,
-        'user_id': session['user_id']
+        'user_id': user_id
     })
     conn.close()
     return redirect(url_for('auth.dashboard'))
@@ -137,14 +147,16 @@ def edit_task(task_id):
     if request.method == 'POST' and form.validate_on_submit():
         title = form.title.data
         description = form.description.data
+        user_id = session['user_id']
         cursor.execute("UPDATE tasks SET title = %s, description = %s WHERE id = %s AND user_id = %s",
-                       (title, description, task_id, session['user_id']))
+                       (title, description, task_id, user_id))
         conn.commit()
+        logging.info(f"Task: {task_id} updated to title: {title} and descripton: {description} by user: {user_id}")
         send_task_event('updated', {
             'task_id': task_id,
             'title': title,
             'description': description,
-            'user_id': session['user_id']
+            'user_id': user_id
         })
         conn.close()
         return redirect(url_for('auth.dashboard'))

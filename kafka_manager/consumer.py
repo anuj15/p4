@@ -1,13 +1,8 @@
-# kafka_manager/consumer.py
-
 import json
 import logging
-import os
 
-from dotenv import load_dotenv
 from kafka import KafkaConsumer
 
-load_dotenv()
 logging.basicConfig(
     filename="../logs/kafka.log",
     level=logging.INFO,
@@ -16,7 +11,7 @@ logging.basicConfig(
 
 consumer = KafkaConsumer(
     'task_events',
-    bootstrap_servers=os.getenv("KAFKA_HOST"),
+    bootstrap_servers='localhost:9092',
     value_deserializer=lambda m: json.loads(m.decode('utf-8')),
     auto_offset_reset='earliest',
     group_id='task_manager_group'
