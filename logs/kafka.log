@@ -1,0 +1,23 @@
+2025-03-27 18:39:19,592 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=127.0.0.1:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to 127.0.0.1:9092 [('127.0.0.1', 9092) IPv4]
+2025-03-27 18:39:19,598 - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=127.0.0.1:9092 <checking_api_versions_recv> [IPv4 ('127.0.0.1', 9092)]>: socket disconnected
+2025-03-27 18:39:19,598 - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=127.0.0.1:9092 <checking_api_versions_recv> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+2025-03-27 18:39:19,599 - WARNING - No node available during check_version; sleeping 0.05 secs
+2025-03-27 18:39:19,647 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=127.0.0.1:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to 127.0.0.1:9092 [('127.0.0.1', 9092) IPv4]
+2025-03-27 18:39:19,650 - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=127.0.0.1:9092 <checking_api_versions_recv> [IPv4 ('127.0.0.1', 9092)]>: socket disconnected
+2025-03-27 18:39:19,650 - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=127.0.0.1:9092 <checking_api_versions_recv> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+2025-03-27 18:39:19,651 - WARNING - No node available during check_version; sleeping 0.11 secs
+2025-03-27 18:39:19,758 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=127.0.0.1:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to 127.0.0.1:9092 [('127.0.0.1', 9092) IPv4]
+2025-03-27 18:39:19,761 - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=127.0.0.1:9092 <checking_api_versions_recv> [IPv4 ('127.0.0.1', 9092)]>: socket disconnected
+2025-03-27 18:39:19,761 - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=127.0.0.1:9092 <checking_api_versions_recv> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+2025-03-27 18:39:19,761 - WARNING - No node available during check_version; sleeping 0.21 secs
+2025-03-27 18:39:19,975 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=127.0.0.1:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to 127.0.0.1:9092 [('127.0.0.1', 9092) IPv4]
+2025-03-27 18:39:19,977 - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=127.0.0.1:9092 <checking_api_versions_recv> [IPv4 ('127.0.0.1', 9092)]>: socket disconnected
+2025-03-27 18:39:19,977 - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=127.0.0.1:9092 <checking_api_versions_recv> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+2025-03-27 18:39:19,977 - WARNING - No node available during check_version; sleeping 0.42 secs
+2025-03-27 18:39:20,402 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=127.0.0.1:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to 127.0.0.1:9092 [('127.0.0.1', 9092) IPv4]
+2025-03-27 18:39:20,405 - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=127.0.0.1:9092 <checking_api_versions_recv> [IPv4 ('127.0.0.1', 9092)]>: socket disconnected
+2025-03-27 18:39:20,405 - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=127.0.0.1:9092 <checking_api_versions_recv> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+2025-03-27 18:39:20,406 - WARNING - No node available during check_version; sleeping 0.65 secs
+2025-03-27 18:39:21,055 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=127.0.0.1:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to 127.0.0.1:9092 [('127.0.0.1', 9092) IPv4]
+2025-03-27 18:39:21,056 - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=127.0.0.1:9092 <checking_api_versions_send> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: Unable to determine broker version.
+2025-03-27 18:39:21,056 - WARNING - No node available during check_version; sleeping 0.53 secs
