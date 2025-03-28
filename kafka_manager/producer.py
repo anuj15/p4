@@ -4,7 +4,7 @@ import logging
 from kafka import KafkaProducer
 
 logging.basicConfig(
-    filename="../logs/kafka.log",
+    filename="logs/kafka.log",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )

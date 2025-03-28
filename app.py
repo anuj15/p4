@@ -1,3 +1,4 @@
+import logging
 import os
 
 from flask import Flask, session, redirect, url_for
@@ -7,6 +8,10 @@ from auth.routes import auth_bp
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "dev")
 app.register_blueprint(auth_bp)
+
+with open("logs/kafka.log", "w") as f:
+    f.write("")
+logging.info("Kafka log file cleared")
 
 
 @app.route('/')
